@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
 import Fave from "./Fave"
 import Poster from './Poster'
 
-export default class FilmRow extends Component {
-
+function FilmRow () {
+  
   handleDetailsClick = film => {
     console.log('fetching details for film:', film.title)
   }
-
-  render() {
 
     return (
         <div className="film-row" onClick={() => this.handleDetailsClick(this.props.movie)}>
@@ -26,5 +23,4 @@ export default class FilmRow extends Component {
 
         
     );
-  }
 }

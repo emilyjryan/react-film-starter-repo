@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
 import FilmRow from './FilmRow';
 
-export default class FilmList extends Component {
+function Filmlist() {
+
+  const [faves, setFaves] = useState([])
 
     state = {
         filter: "all"
@@ -11,8 +12,6 @@ export default class FilmList extends Component {
         console.log('filter was clicked', filter)
         this.setState ({ filter })
     }
-
-  render() {
 
     const allFilms = this.props.films.map((film, i) => {
         return (
@@ -42,5 +41,4 @@ export default class FilmList extends Component {
           {allFilms}
         </div>
       )
-  }
 }

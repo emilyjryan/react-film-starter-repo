@@ -1,24 +1,14 @@
-import React, { Component } from 'react';
+function Fave () {
 
-export default class Fave extends Component {
-
-  state = {
-    isFave: false
-  }
-
-  handleClick = (e) => {
+  const handleClick = e => {
     e.stopPropagation()
      console.log("handling fave click")
-     this.setState(prevState => {
-      return {
-        //isFave: prevState.isFave ? false : true
-        isFave: !prevState.isFave
-      }
-     })
+    
+     // call the fxn passed through props:
+     props.onFaveToggle()
    }
 
-  render() {
-    const action = this.state.isFave ? 'remove_from_queue' : 'add_to_queue'
+    const action = props.isFave ? 'remove_from_queue' : 'add_to_queue'
 
 
     return (
@@ -29,5 +19,4 @@ export default class Fave extends Component {
     </div>
         
     );
-  }
 }

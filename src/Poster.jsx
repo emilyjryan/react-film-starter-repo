@@ -1,7 +1,4 @@
-import React, { Component } from 'react'
-
-export default class Poster extends Component {
-    render() {
+function Poster () {
         return (
             <>
                 <img 
@@ -10,5 +7,4 @@ export default class Poster extends Component {
                 />
             </>
         )
-    }
 }
