@@ -2,25 +2,26 @@ import Fave from "./Fave"
 import Poster from './Poster'
 
 function FilmRow () {
-  
-  handleDetailsClick = film => {
-    console.log('fetching details for film:', film.title)
-  }
 
     return (
-        <div className="film-row" onClick={() => this.handleDetailsClick(this.props.movie)}>
+        <div className="film-row" onClick={() => props.handleDetailsClick(props.film)}>
 
         <Poster
-            url={`https://image.tmdb.org/t/p/w780/${this.props.movie.poster_path}`} alt={this.props.movie.title}
+            url={`https://image.tmdb.org/t/p/w780/${props.film.poster_path}`} alt={props.film.title}
         />
 
             <div className="film-summary">
-                <h1>{this.props.movie.title}</h1>
-                <p>{this.props.movie.release_date.substring(0, 4)}</p>
+                <h1>{props.film.title}</h1>
+                <p>{props.film.release_date.substring(0, 4)}</p>
             </div>
-                <Fave/>
+                <Fave
+                onFaveToggle={ () => {props.onFaveToggle(props.film)}}
+                isFave={props.isFave}
+                />
         </div>
 
         
     );
 }
+
+export default FilmRow

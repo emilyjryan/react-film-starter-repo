@@ -8,3 +8,5 @@ function Poster () {
             </>
         )
 }
+
+export default Poster

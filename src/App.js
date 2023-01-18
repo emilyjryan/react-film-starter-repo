@@ -1,6 +1,7 @@
 import FilmList from './FilmList'
 import Details from './Details'
 import TMDB from './TMDB'
+import { useState } from 'react';
 
 function App() {
 
@@ -20,10 +21,20 @@ function App() {
     release_date: '',
   })
 
+  const handleDetailsClick = film => {
+    console.log('fetching details for film:', film.title)
+    current = film
+  }
+
     return (
       <div className="film-library">
-        <FilmList films={films}/>
+        <FilmList 
+        films={films}
+        handleDetailsClick={handleDetailsClick}
+        />
         <Details film={current}/>
       </div>
     );
 }
+
+export default App

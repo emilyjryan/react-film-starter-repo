@@ -20,3 +20,5 @@ function Fave () {
         
     );
 }
+
+export default Fave
