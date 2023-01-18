@@ -9,6 +9,8 @@ function FilmList() {
         filter: "all"
     }
 
+    const filmsToDisplay = filter === "all" ? props.films : faves;
+
     handleFilterClick = filter => {
         console.log('filter was clicked', filter)
         this.setState ({ filter })
@@ -29,7 +31,7 @@ function FilmList() {
       setFaves(newFaves)
     }
 
-    const allFilms = this.props.films.map((film, i) => {
+    const allFilms = filmsToDisplay.map((film, i) => {
         return (
             <FilmRow 
             film={film} 
