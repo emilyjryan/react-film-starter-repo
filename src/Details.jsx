@@ -1,4 +1,4 @@
-function Details() {
+export default function Details(props) {
 
   const filmInfo = (
     <div className="film-detail is-hydrated">
@@ -35,5 +35,3 @@ function Details() {
         </div>
     );
 }
-
-export default Details

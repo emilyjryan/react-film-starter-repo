@@ -1,12 +1,10 @@
-function Poster () {
+export default function Poster (props) {
         return (
             <>
                 <img 
-                    src={this.props.url} 
-                    alt={this.props.alt}
+                    src={props.url} 
+                    alt={props.alt}
                 />
             </>
         )
 }
-
-export default Poster

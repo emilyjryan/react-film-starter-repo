@@ -3,16 +3,10 @@ import Details from './Details'
 import TMDB from './TMDB'
 import { useState } from 'react';
 
-function App() {
+export default function App() {
 
-  // how state is set and changed:
-  // const [state, setState] = useState('defaultState')
-
-  // ===== // ALL FILMS VARIABLE // ===== //
   const [films, setFilms] = useState(TMDB.films)
-  
-    // ===== // CURRENT MOVIE VARIABLE // ===== //
-  const [current, setCurrent] = useState({
+  let [current, setCurrent] = useState({
     id: '',
     title: '',
     poster_path: '',
@@ -36,5 +30,3 @@ function App() {
       </div>
     );
 }
-
-export default App
